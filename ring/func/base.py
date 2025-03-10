@@ -213,7 +213,7 @@ def coerce_function(t):
     if issubclass(t, (list, tuple)):
         return _coerce_list_and_tuple
 
-    if t == type:
+    if t == type or t == abc.ABCMeta:
         return _coerce_type
 
     if issubclass(t, dict):
